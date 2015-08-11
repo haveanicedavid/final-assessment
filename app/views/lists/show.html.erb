@@ -1,0 +1,10 @@
+<h2><%= @list.title %></h2>
+
+<p><%= link_to "New Task for #{@list.title}", new_task_path %></p>
+
+Description: <br>
+<%= @list.description %>
+
+<p><%= link_to "Edit this list", edit_list_path(@list) %></p>
+
+<p> <%= link_to "Return to the Lists", lists_path %> </p>
