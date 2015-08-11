@@ -1,9 +1,14 @@
 <h2><%= @list.title %></h2>
 
-<p><%= link_to "New Task for #{@list.title}", new_task_path %></p>
+<p><%= link_to "New Task", new_task_path(:list_id => @list.id) %></p>
 
-Description: <br>
+<h3>Description:</h3>
 <%= @list.description %>
+
+<h3>Current Tasks:</h3>
+<% @list.tasks.each do |task| %>
+  <p><%= link_to task.title, task_path(task) %>: <%= task.status %></p>
+<% end %>
 
 <p><%= link_to "Edit this list", edit_list_path(@list) %></p>
 

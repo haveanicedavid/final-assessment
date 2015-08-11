@@ -1,0 +1,27 @@
+<%= form_for(@task) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+    <br>
+
+    <%#= f.check_box :status %>
+    <%#= f.label :status, "Task Incomplete?", :value => 'Incomplete' %>
+    <br>
+
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+
+    <br>
+    <%= f.label :due_date %>
+    <%= f.date_field :due_date %>
+
+    <%= f.hidden_field :list_id, :value => params[:list_id] %>
+
+    <br>
+
+    <%= f.submit %>
+<% end %>
+  

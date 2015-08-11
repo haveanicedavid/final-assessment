@@ -32,8 +32,15 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to list_path(@list)
     else
+      flash[:errors] = @list.errors.full_messages.join(", ")
       render :edit
     end
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to lists_path
   end
 
   private

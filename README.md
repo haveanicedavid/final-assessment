@@ -1,22 +1,12 @@
-# Final Assessment
-
-For your final assessment, you'll be building a task management application.
-
-## Before You Begin
-
-* There is no authentication or authorization requirement for this application. You do not need to implement log ins. The "user" in the expecations below is anyone who visits the site.
-* There is no requirement for styling or additional CSS.
-* The expectations below refer to how the user experiences the site, you're welcome to structure the schema of your application as you see fit.
-
 ## Base Expectations
 
 * The application must be deployed and working in production.
 
 ### Lists
 
-* A task list has a title. The title is required.
-* A task list has a description.
-* A user can create a task list.
+<!-- * A task list has a title. The title is required. -->
+<!-- * A task list has a description. -->
+<!-- * A user can create a task list. -->
 * A user can rename a task list as long as the new name is not blank.
 * A user can only delete a list.
 

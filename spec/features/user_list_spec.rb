@@ -10,7 +10,6 @@ RSpec.describe'User Lists' do
 
     it 'displays the lists' do
       visit lists_path
-      # save_and_open_page
       expect(page).to have_content("My list")
       expect(page).to have_content("This is my list")
     end
