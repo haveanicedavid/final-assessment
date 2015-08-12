@@ -15,6 +15,7 @@ gem 'jquery-tablesorter'
 
 # gem 'carrierwave', '~> 0.9'
 gem "paperclip", "~> 4.3"
+gem 'responders'
 
 
 group :development, :test do

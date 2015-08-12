@@ -21,7 +21,7 @@
         <td><%= task.notes %></td>
         <td><%= task.start_date.to_date %></td>
         <td><%= task.due_date.to_date %></td>
-        <td><%= task.status %></td>
+        <td><a href="#" class="task-status" data-id=<%=task.id %>><%= task.status %></a></td>
       </tr>
     <% end %>
   </tbody>
