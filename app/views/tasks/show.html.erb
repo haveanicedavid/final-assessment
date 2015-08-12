@@ -1,13 +1,13 @@
 <%= link_to "Return to #{@task.list.title}", list_path(@task.list) %>
-<p>List this task is in: <%= @task.list.title %></p>
 
-<p> Task Title: <%= @task.title %></p>
-<p> Task Notes: <%= @task.notes %></p>
-<p> Task Start Date: <%= @task.start_date.to_date %></p>
-<p> Task Due Date: <%= @task.due_date.to_date %></p>
+<h3><%= @task.title %></h3>
+<p><strong>Notes:</strong> <%= @task.notes %></p>
+<p><strong>Start Date:</strong> <%= @task.start_date.to_date %></p>
+<p><strong>Due Date:</strong> <%= @task.due_date.to_date %></p>
 <p> <%= link_to "Delete Task", task_path(@task), method: :delete %></p>
+<p> <%= link_to "Edit Task", edit_task_path(@task, :list_id => @task.list_id) %></p>
 
-<% if @task.image != nil %>
+<% if @task.image %>
   <p> <%= image_tag @task.image.url(:medium) %><%= link_to 'Delete Image', delete_image_path(task_id: @task.id), method: :delete %></p>
 <% end %>
 

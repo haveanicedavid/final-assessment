@@ -22,6 +22,7 @@
         <td><%= task.start_date.to_date %></td>
         <td><%= task.due_date.to_date %></td>
         <td><a href="#" class="task-status" data-id=<%=task.id %>><%= task.status %></a></td>
+        <td><%= link_to "Edit Task", edit_task_path(task, :list_id => @list.id) %></td>
       </tr>
     <% end %>
   </tbody>

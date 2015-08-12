@@ -1,5 +1,4 @@
 $(document).ready( function(){
-
   bindToggleCompletion();
 });
 
@@ -8,8 +7,8 @@ function bindToggleCompletion () {
     data.preventDefault();
 
     var current = $(this).html();
-    var id = $(this).data(id).id;
-    var status = null;
+    var id      = $(this).data(id).id;
+    var status  = null;
 
     if (current === 'Incomplete') {
       $(this).html("Complete");
@@ -29,17 +28,7 @@ function bindToggleCompletion () {
         "task_id": id ,
         "status": status
       }
-
     });
+    
   });
 }
-
-// function toggleCompletion (content) {
-//   if (content.html() === "Incomplete") {
-//     return content.html("Complete");
-//   }
-
-//   if (content.html() === "Complete") {
-//     return content.html("Incomplete");
-//   }
-// }

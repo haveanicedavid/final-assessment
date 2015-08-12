@@ -2,15 +2,14 @@ class TasksController < ApplicationController
   respond_to :json
   
   def new
-    # binding.pry
     @task = Task.new
   end
 
   def create
-
+    # @list = List.find(params[:task][:list_id])
     @task = Task.new(task_params)
+    # @task.list = @list
     if @task.save
-      @task.list = @list
       flash[:success] = "Successfully created a new List"
       redirect_to task_path(@task)
     else
@@ -27,6 +26,22 @@ class TasksController < ApplicationController
     @list = @task.list
     @task.destroy
     redirect_to list_path(@list)
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if @task.update(task_params)
+      @task.save
+      redirect_to task_path(@task)
+    else
+      flash[:errors] = @task.errors.full_messages.join(", ")
+      render :edit
+    end
   end
 
   def delete_image
