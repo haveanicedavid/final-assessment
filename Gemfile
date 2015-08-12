@@ -14,7 +14,6 @@ gem 'paperclip'
 gem 'therubyracer'
 gem 'less-rails'
 
-gem "paperclip", "~> 4.3"
 gem 'jquery-tablesorter'
 # gem 'responders'
 
