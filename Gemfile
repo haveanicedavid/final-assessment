@@ -16,7 +16,7 @@ gem 'jquery-tablesorter'
 # gem 'carrierwave', '~> 0.9'
 gem "paperclip", "~> 4.3"
 gem 'responders'
-gem 'foundation-rails'
+# gem 'foundation-rails'
 
 group :production do  
   gem 'rails_12factor'  
