@@ -21,4 +21,15 @@ RSpec.describe List, type: :model do
     
   end
 
+  context "has tasks" do
+    
+    it "has tasks" do
+      list.tasks.create(title: "Get beer",
+                         status: 0,
+                         notes: "Want hops in my belly",
+                         due_date: "11/10/2100",
+                         start_date: "11/10/2100")
+      expect(list.tasks.length).to equal(1)
+    end
+  end
 end
