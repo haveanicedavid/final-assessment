@@ -14,6 +14,8 @@ gem 'paperclip'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'responders'
+gem 'sendgrid-rails', '~> 2.0'
+# gem 'sendgrid'
 
 gem 'jquery-tablesorter'
 

@@ -60,6 +60,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def send_email(address)
+    UserNotifier.send_new_task_email(address).deliver
+  end
+
   private
 
     def task_params

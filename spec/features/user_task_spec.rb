@@ -42,7 +42,22 @@ RSpec.describe'User Tasks' do
 
       expect(page).to have_content("My task 2")
       expect(page).to have_content("My task's body 2")
-      
+    end
+
+    it "can't create a task with due date in the past" do
+      visit list_path(list)
+      click_link "New Task"
+
+      fill_in "task[title]", with: "My task 2"
+      fill_in "task[notes]", with: "My task's body 2"
+
+      fill_in "task[start_date]", with: "12/10/2015"
+      fill_in "task[due_date]", with: "3/10/2015"
+
+      click_button 'Create Task'
+
+      expect(page).to have_content("My task 2")
+      expect(page).to have_content("My task's body 2")
     end
   end
 
