@@ -13,9 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'therubyracer'
 gem 'less-rails'
+gem 'responders'
 
 gem 'jquery-tablesorter'
-# gem 'responders'
 
 
 group :development, :test do
