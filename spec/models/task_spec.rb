@@ -32,6 +32,17 @@ RSpec.describe Task, type: :model do
       task.start_date = Date.yesterday
       expect(task).to_not be_valid
     end
+
+    it "isn't valid without a due date" do
+      task.due_date = "" 
+      expect(task).to_not be_valid
+    end
+
+    it "isn't valid without a start date" do
+      task.start_date = "" 
+      expect(task).to_not be_valid
+    end
+
   end
 
 end

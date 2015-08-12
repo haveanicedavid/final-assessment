@@ -12,6 +12,7 @@ class TasksController < ApplicationController
       flash[:success] = "Successfully created a new List"
       redirect_to task_path(@task)
     else
+      flash.now[:error] = @task.errors.full_messages.join(", ")
       render :new
     end
   end
@@ -35,6 +36,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
+      flash[:success] = "#{@task.title} updated"
       redirect_to task_path(@task)
     else
       flash[:errors] = @task.errors.full_messages.join(", ")

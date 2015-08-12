@@ -7,14 +7,14 @@
 <!-- * A task list has a title. The title is required. -->
 <!-- * A task list has a description. -->
 <!-- * A user can create a task list. -->
-* A user can rename a task list as long as the new name is not blank.
-* A user can only delete a list.
+<!-- * A user can rename a task list as long as the new name is not blank. -->
+<!-- * A user can only delete a list. -->
 
 ### Tasks
 
-* A task has title, status (complete or incomplete), a text field for notes, a due date, and a start date.
-* A user can create a task. Tasks must have titles.
-* A user can update and adjust the properties of an existing task.
+<!-- * A task has title, status (complete or incomplete), a text field for notes, a due date, and a start date. -->
+<!-- * A user can create a task. Tasks must have titles. -->
+<!-- * A user can update and adjust the properties of an existing task. -->
 * A user can mark a task as completed.
 * A user cannot set a start date or due date before the current date.
 * By default, users should only see incomplete tasks.

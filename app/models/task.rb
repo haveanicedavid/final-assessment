@@ -1,8 +1,9 @@
 class Task < ActiveRecord::Base
 
-  # mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
+  validates :title      , presence: true
+  validates :start_date , presence: true
+  validates :due_date   , presence: true
 
-  validates :title, presence: true
   validate :check_start_date, :check_due_date
   belongs_to :list
 
