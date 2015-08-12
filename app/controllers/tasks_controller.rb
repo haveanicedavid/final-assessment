@@ -6,9 +6,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    # @list = List.find(params[:task][:list_id])
     @task = Task.new(task_params)
-    # @task.list = @list
+    
     if @task.save
       flash[:success] = "Successfully created a new List"
       redirect_to task_path(@task)
@@ -36,7 +35,6 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
-      @task.save
       redirect_to task_path(@task)
     else
       flash[:errors] = @task.errors.full_messages.join(", ")
@@ -52,7 +50,7 @@ class TasksController < ApplicationController
   end
 
   def update_status
-    @task = Task.find(params[:task_id])
+    @task        = Task.find(params[:task_id])
     @task.status = params[:status].to_i
     
     if @task.save

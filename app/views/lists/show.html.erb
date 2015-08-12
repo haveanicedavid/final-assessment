@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <% @list.tasks.each do |task| %>
-      <tr>
+      <tr class="task-item">
         <td><%= link_to task.title, task_path(task) %> </td>
         <td><%= task.notes %></td>
         <td><%= task.start_date.to_date %></td>
@@ -27,6 +27,9 @@
     <% end %>
   </tbody>
 </table>
+
+<p><a id="show-complete-tasks" href="#">Show Complete Tasks</a></p>
+<p><a id="hide-complete-tasks" href="#">Hide Complete Tasks</a></p>
 
 <p><%= link_to "Edit this list", edit_list_path(@list) %></p>
 

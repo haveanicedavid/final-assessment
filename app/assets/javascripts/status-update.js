@@ -1,5 +1,7 @@
 $(document).ready( function(){
   bindToggleCompletion();
+  bindShowAllTasks();
+  hideCompleteTasksOnLoad();
 });
 
 function bindToggleCompletion () {
@@ -30,5 +32,25 @@ function bindToggleCompletion () {
       }
     });
     
+  });
+}
+
+function bindShowAllTasks () {
+  $('#show-complete-tasks').on('click', function(data) {
+    data.preventDefault();
+    $('.task-item').each(function() {
+      $(this).show();
+    });
+  });
+}
+
+function hideCompleteTasksOnLoad () {
+  $('.task-status').each(function() {
+    if ($(this).html() === "Complete") {
+      var daddy = $(this).parents('.task-item');
+      daddy.toggle();
+      // console.log($(this).parents('.task-item'));
+    }
+    // console.log($(this).html());
   });
 }
