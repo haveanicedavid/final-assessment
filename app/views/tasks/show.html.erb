@@ -5,6 +5,6 @@
 <p> Task Notes: <%= @task.notes %></p>
 <p> Task Start Date: <%= @task.start_date.to_date %></p>
 <p> Task Due Date: <%= @task.due_date.to_date %></p>
-<p> <%= image_tag @task.image.url(:medium) %><%= link_to 'Delete Image', tasks_image_delete_path  %></p>
+<p> <%= image_tag @task.image.url(:medium) %><%= link_to 'Delete Image', tasks_delete_image_path %></p>
 
 <p>Status: <%= @task.status %></p>
