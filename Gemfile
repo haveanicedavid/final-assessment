@@ -6,21 +6,17 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'therubyracer', platforms: :ruby
+gem 'therubyracer'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'jquery-tablesorter'
+gem 'less-rails'
 
-# gem 'carrierwave', '~> 0.9'
 gem "paperclip", "~> 4.3"
-gem 'responders'
-# gem 'foundation-rails'
+gem 'jquery-tablesorter'
+# gem 'responders'
 
-group :production do  
-  gem 'rails_12factor'  
-end 
 
 group :development, :test do
   gem 'pry'
@@ -31,4 +27,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
-ruby "2.2.0"
+group :production do  
+  gem 'rails_12factor'  
+end 
