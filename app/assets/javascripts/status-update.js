@@ -1,7 +1,8 @@
 $(document).ready( function(){
   bindToggleCompletion();
   bindShowAllTasks();
-  hideCompleteTasksOnLoad();
+  bindHideCompleteTasksOnClick();
+  hideCompleteTasks();
 });
 
 function bindToggleCompletion () {
@@ -38,13 +39,23 @@ function bindToggleCompletion () {
 function bindShowAllTasks () {
   $('#show-complete-tasks').on('click', function(data) {
     data.preventDefault();
+    $('#hide-complete-tasks').show();
+    $(this).hide();
     $('.task-item').each(function() {
       $(this).show();
     });
   });
 }
 
-function hideCompleteTasksOnLoad () {
+function bindHideCompleteTasksOnClick () {
+  $('#hide-complete-tasks').on('click', function() {
+    $('#show-complete-tasks').show(); 
+    hideCompleteTasks();
+  });
+}
+
+function hideCompleteTasks () {
+  $('#hide-complete-tasks').hide();
   $('.task-status').each(function() {
     if ($(this).html() === "Complete") {
       var daddy = $(this).parents('.task-item');

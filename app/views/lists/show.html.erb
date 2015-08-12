@@ -1,6 +1,7 @@
 <h2><%= @list.title %></h2>
 
 <p><%= link_to "New Task", new_task_path(:list_id => @list.id) %></p>
+<p><input name="name-search" class="name-search" placeholder="Filter By Name"></p>
 
 <h3>Description:</h3>
 <%= @list.description %>
@@ -14,13 +15,13 @@
     <th>Due Date</th>
     <th>Status</th>
   </thead>
-  <tbody>
+  <tbody class='teh-classes'>
     <% @list.tasks.each do |task| %>
       <tr class="task-item">
         <td><%= link_to task.title, task_path(task) %> </td>
         <td><%= task.notes %></td>
-        <td><%= task.start_date.to_date %></td>
-        <td><%= task.due_date.to_date %></td>
+        <td><%= time_tag task.start_date.to_date %></td>
+        <td><%= time_tag task.due_date.to_date %></td>
         <td><a href="#" class="task-status" data-id=<%=task.id %>><%= task.status %></a></td>
         <td><%= link_to "Edit Task", edit_task_path(task, :list_id => @list.id) %></td>
       </tr>
