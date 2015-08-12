@@ -17,6 +17,9 @@ gem 'jquery-tablesorter'
 gem "paperclip", "~> 4.3"
 gem 'responders'
 
+group :production do  
+  gem 'rails_12factor'  
+end 
 
 group :development, :test do
   gem 'pry'
